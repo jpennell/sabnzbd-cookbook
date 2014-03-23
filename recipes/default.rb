@@ -37,7 +37,7 @@ end
 # Checkout sabnzbd
 git node['sabnzbd']["directories"]['install'] do
   repository node['sabnzbd']['git']['url']
-  reference node['sabnzbd']['git']['tag']
+  reference "#{node['sabnzbd']['git']['tag']}^{}"
   action :sync
   user node['sabnzbd']['user']
   group node['sabnzbd']['group']
