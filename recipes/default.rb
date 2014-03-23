@@ -4,6 +4,7 @@
 #
 
 include_recipe "bluepill"
+include_recipe "git"
 
 package "python-cheetah"
 package "python-yenc"
@@ -37,7 +38,7 @@ end
 # Checkout sabnzbd
 git node['sabnzbd']["directories"]['install'] do
   repository node['sabnzbd']['git']['url']
-  revision node['sabnzbd']['git']['revision']
+  revision node['sabnzbd']['git']['tag']
   action :sync
   user node['sabnzbd']['user']
   group node['sabnzbd']['group']
