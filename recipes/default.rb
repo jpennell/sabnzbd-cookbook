@@ -20,9 +20,9 @@ end
 # Create directories
 app_dirs = [
   "home/#{node['sabnzbd']['user']}",
-  "#{node['sabnzbd']['install_dir']}",
-  "#{node['sabnzbd']['log_dir']}",
-  "#{node['sabnzbd']['config_dir']}"
+  "#{node['sabnzbd']["directories"]['install']}",
+  "#{node['sabnzbd']["directories"]['logs']}",
+  "#{node['sabnzbd']["directories"]['config']}"
 ]
 
 app_dirs.each do |x|
@@ -35,7 +35,7 @@ app_dirs.each do |x|
 end
 
 # Checkout sabnzbd
-git node['sabnzbd']['install_dir'] do
+git node['sabnzbd']["directories"]['install'] do
   repository node['sabnzbd']['git']['url']
   reference node['sabnzbd']['git']['tag']
   action :sync

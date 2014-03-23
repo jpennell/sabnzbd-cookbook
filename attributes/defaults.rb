@@ -6,9 +6,9 @@
 default["sabnzbd"]["user"] = 'sabnzbd'
 default["sabnzbd"]["group"] = 'sabnzbd'
 
-default["sabnzbd"]["install_dir"] = '/opt/sabnzbd'
-default["sabnzbd"]["log_dir"] = '/var/log/sabnzbd'
-default["sabnzbd"]["config_dir"] = '/etc/sabnzbd'
+default["sabnzbd"]["directories"]["install"] = '/opt/sabnzbd'
+default["sabnzbd"]["directories"]["logs"] = '/var/log/sabnzbd'
+default["sabnzbd"]["directories"]["config"] = '/etc/sabnzbd'
 
 default["sabnzbd"]["host"] = '0.0.0.0'
 default["sabnzbd"]["port"] = '6000'
