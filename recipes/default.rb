@@ -37,7 +37,7 @@ end
 # Checkout sabnzbd
 git node['sabnzbd']["directories"]['install'] do
   repository node['sabnzbd']['git']['url']
-  revision #{node['sabnzbd']['git']['revision']}
+  revision node['sabnzbd']['git']['revision']
   action :sync
   user node['sabnzbd']['user']
   group node['sabnzbd']['group']
