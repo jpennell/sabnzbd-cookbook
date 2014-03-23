@@ -34,20 +34,13 @@ app_dirs.each do |x|
   end
 end
 
-# Download sabnzbd
-remote_file "#{node['sabnzbd']['install_dir']}/SABnzbd-#{node['sabnzbd']['version']}-src.tar.gz" do
-  source "http://softlayer-ams.dl.sourceforge.net/project/sabnzbdplus/sabnzbdplus/#{node['sabnzbd']['version']}/SABnzbd-#{node['sabnzbd']['version']}-src.tar.gz"
+# Checkout sabnzbd
+git node['sabnzbd']['install_dir'] do
+  repository node['sabnzbd']['git']['url']
+  revision node['sabnzbd']['git']['tag']
+  action :sync
   user node['sabnzbd']['user']
   group node['sabnzbd']['group']
-end
-
-# Extract sabnzbd
-bash "extract" do
-   code <<-EOS
-   cd #{node['sabnzbd']['install_dir']}
-   tar xzvf SABnzbd-#{node['sabnzbd']['version']}-src.tar.gz
-   cd --
-   EOS
 end
 
 # Set up daemon with bluepill
