@@ -8,7 +8,7 @@ default["sabnzbd"]["group"] = 'sabnzbd'
 
 default["sabnzbd"]["directories"]["install"] = '/opt/sabnzbd'
 default["sabnzbd"]["directories"]["logs"] = '/var/log/sabnzbd'
-default["sabnzbd"]["directories"]["config"] = '/vagrant/etc/sabnzbd'
+default["sabnzbd"]["directories"]["config"] = '/etc/sabnzbd'
 
 default["sabnzbd"]["host"] = '0.0.0.0'
 default["sabnzbd"]["port"] = '6000'
