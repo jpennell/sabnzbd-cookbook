@@ -14,4 +14,4 @@ default["sabnzbd"]["host"] = '0.0.0.0'
 default["sabnzbd"]["port"] = '6000'
 
 default["sabnzbd"]["git"]["url"] = "https://github.com/sabnzbd/sabnzbd.git"
-default["sabnzbd"]["git"]["tag"] = "0.7.17"
+default["sabnzbd"]["git"]["tag"] = "master"
